@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация и вход</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body{
+            background: #444;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 40px;
+            padding: 50px;
+        }
+        form{
+            background: white;
+            border-radius: 12px;
+            padding: 25px 30px;
+            width: 300px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+        }
+        h2{
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 22px;
+        }
+        input, select, button{
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 15px;
+            border: 2px solid #190202;
+            border-radius: 8px;
+            font-size: 14px;        
+        }
+        button{
+            background-color: #011414;
+            color: #ccc;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover{
+            background-color: #454545;
+        }
+        #output{
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #fff;
+            padding: 15px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(156, 14, 14, 0.1);
+            font-size: 16px;
+            color: #333;
+            max-width: 500px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <script src="script.js"></script>
+    <script src="script2.js"></script>
+    <form id="registerForm">
+        <h2>Регистрация</h2>
+        <input type="text" placeholder="Имя" id="regName" required/>
+        <input type="email" placeholder="Email" id="regEmail" required/>
+        <input type="password" placeholder="Пароль(минимум 6 знаков)" id="regPassword" required/>
+        <select id="regRole">
+            <option value="User">User</option>
+            <option value="Guest">Guest</option>
+        </select>
+        <button type="submit">Зарегистрироваться</button>
+    </form>
+    <form id="loginForm">
+        <h2>Вход</h2>
+        <input type="email" placeholder="Email" id="logEmail" required/>
+        <input type="password" placeholder="Пароль" id="logPassword" required/>
+        <button type="submit">Войти</button>
+    </form>
+    <div id="output"></div>
+</body>
+</html>
