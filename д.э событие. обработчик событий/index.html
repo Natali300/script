@@ -1,0 +1,53 @@
+<!-- Создайте HTML-страницу с тремя кнопками: 
+● первая кнопка будет добавлять обработчик события "клик" ко второй кнопке; 
+● вторая кнопка будет удалять этот обработчик; 
+● третья кнопка — та самая целевая, к которой добавляется или удаляется обработчик. 
+Что должен делать обработчик: Когда он срабатывает — он должен выводить в alert 
+сообщение: "Вы кликнули по целевой кнопке!". Также в консоль должно выводиться: 
+● тип события (event.type), 
+● элемент, на который был произведён клик (event.target). 
+Подсказки: 
+● Для того чтобы можно было удалить обработчик, нужно использовать одну и ту же 
+именованную функцию при добавлении и при удалении. 
+● Не забудьте получить кнопки через getElementById или querySelector и убедиться, 
+что скрипт подключен после элементов на странице или в событии DOMContentLoaded. 
+● Используйте addEventListener и removeEventListener.  -->
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обработчик событий</title>
+</head>
+<body>
+    <button id="addHandler">добавить обработчик </button> <br>
+    <button id="deleteHandler">удалить обработчик </button><br>
+    <button id="targetButton">целевая кнопка </button><br>
+
+    <script>
+        // функция для обработчика события
+        function eventHandling(event){
+            alert("Вы кликнули по целевой кнопке!");
+            console.log("Тип события:", event.type);
+            console.log("Элемент:", event.target);
+        }
+        // Получаем кнопки по их идентификаторам
+        const addHandlerButton = document.querySelector("#addHandler");
+        const deleteHandlerButton = document.querySelector("#deleteHandler");
+        const targetButtonButton = document.querySelector("#targetButton");
+        // Добавляем обработчик на кнопку добавления
+        addHandlerButton.addEventListener('click', function() {
+            targetButtonButton.addEventListener('click', eventHandling);
+        });
+
+        // Добавляем обработчик на кнопку удаления
+        deleteHandlerButton.addEventListener('click', function() {
+            targetButtonButton.removeEventListener('click', eventHandling);
+        });
+        
+
+    </script>
+   
+</body>
+</html>
