@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <button id="checkSize">показать размер браузерного окна</button>
+    <script>
+        document.getElementById("checkSize").addEventListener("click",function(){
+            alert(`ширина:${window.innerWidth}, высота: ${window.innerHeight}`);
+        }); </script>-->
+
+
+        <!-- <button id="go">перекинуть на другой сайт</button>
+    <script>
+        document.getElementById("go").addEventListener("click",() =>{
+            location.href = "https://www.google.com";
+        });
+
+
+    </script> -->
+
+
+    <!-- <button id="start">начать</button>
+    <script>
+        document.getElementById("start").addEventListener("click",()=>{
+            const ready = confirm("вы готовы");
+            if(ready){
+                const name = prompt("как вас зовут");
+                alert(`Привет ${name}`);
+            }else{
+                alert("ну тогда в другой раз")
+            }
+        });
+    </script> -->
+
+
+
+<!-- <button id="deley">Показать сообщение на 3 секунды</button>
+    <script>
+        document.getElementById("deley").addEventListener("click",()=>{
+            setTimeout(()=>{
+                alert("прошло 3 секунды");
+            },3000);
+            
+        });
+    </script> -->
+
+
+<!-- 
+<button id="startTimer">старт</button>
+<button id="stopTimer">стоп</button>
+
+<p>счет: <span id="counter">0</span></p>
+    <script>
+        let count = 0;
+        let intervalId;
+        document.getElementById("startTimer").addEventListener("click",()=>{
+            intervalId = setInterval(()=>{
+                count++;
+                document.getElementById("counter").textContent = count;
+            },1000);   
+        });
+        document.getElementById("stopTimer",).addEventListener("click",()=>{
+           
+                clearInterval(intervalId);
+             
+        });
+
+    </script> -->
+
+
+<button id="timeSpent">сколько я на странице</button>
+<button id="greet">приветствие</button>
+<button id="navigateB">переадрисация по выбору</button>
+
+
+    <script>
+        const startTime = Date.now()//возвращает текущее время
+        document.getElementById("timeSpent").addEventListener("click",()=>{
+           const currentTime = Date.now();
+           const timeSpent = Math.floor((currentTime - startTime)/1000);
+           alert(`вы на странице уже ${timeSpent}секунд`);       
+        });
+        document.getElementById("greet").addEventListener("click",()=>{
+            const hours = new Date().getHours();
+            let greeting ;
+            if(hours >= 5 && hours < 12){
+                greeting = "доброе утро";
+            }else if(hours>=12 && hours < 18){
+                    greeting = "день";
+                }else{
+                    greeting = "добрый вечер";
+                }
+                alert(greeting);
+            });
+            
+            document.getElementById("navigateB").addEventListener("click",()=>{
+                const input = prompt("нажмите 1 чтобы перейти на Google \n нажмите 2 чтобы перейти на Yandex");
+                if(input === "1"){
+                    window.location.href = "http://www.google.com";
+                }
+                if(input === "2"){
+                    window.location.href = "http://www.yandex.ru";
+                }
+                else{
+                    alert("ошибка, надо ввести 1 или 2");
+                }
+            });
+        
+
+    </script>
+
+
+
+
+
+    <!-- <script src="script.js"></script> -->
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- // Задание 2: 
+// Что необходимо реализовать: 
+// 1. Запрос имени пользователя — При загрузке страницы с помощью prompt 
+// запросите у пользователя имя. — Затем приветствуйте его, используя alert 
+// и отобразите имя на странице в приветственном сообщении. 
+// 2. Вывод текущего времени — Реализуйте отображение текущего времени, 
+// обновляющееся каждую секунду с помощью setInterval.  -->
+
+<div id="clock"></div>
+<form action="">
+<button id="link">перейти на сайт</button>
+</form>
+<script>
+    setInterval(()=>{
+     const data = new Date();
+     const hours = data.getHours().toString().padStart(2,0);
+     const minutes = data.getMinutes().toString().padStart(2,0);
+     const sekonds = data.getSeconds().toString().padStart(2,0);
+     const clockString = `${hours} : ${minutes} : ${sekonds}`;
+     document.getElementById("clock").textContent = clockString;
+    },1000);
+    const name = prompt("как вас зовут");
+    alert(`Привет ${name}`);
+
+
+// 3. Кнопки с различным функционалом: 
+// ○ Показ размеров окна браузера (ширина и высота).
+alert(screen.width);
+alert(screen.height);
+// ○ Отображение языка браузера (navigator.language).
+alert(navigator.language);
+// ○ Кнопка перехода на сайт, введённый пользователем — используйте prompt, 
+// чтобы запросить ссылку и перейти по адресу с помощью location.href.
+let link = window.location.href;
+document.getElementById(link).textContent = prompt(`перейти по адресу `); 
+// ○ Старт и стоп таймера — кнопки должны запускать и останавливать секундомер на экране.
+
+
+
+
+</script>
+
+</body>
+</html>
