@@ -15,9 +15,21 @@
 // обновляющееся каждую секунду с помощью setInterval.  -->
 
 <div id="clock"></div>
-<form action="">
-<button id="link">перейти на сайт</button>
-</form>
+
+<button id="link">перейти на сайт</button><br><br><br>
+
+<button id="start">старт</button>
+<button id="stop">стоп</button>
+<button id ="reset">сброс</button><br>
+<span id="counts"></span>
+<style>
+    #counts{
+        font-size: 20px;
+        margin: 60px;
+        color: brown;
+    }
+</style>
+
 <script>
     setInterval(()=>{
      const data = new Date();
@@ -39,13 +51,32 @@ alert(screen.height);
 alert(navigator.language);
 // ○ Кнопка перехода на сайт, введённый пользователем — используйте prompt, 
 // чтобы запросить ссылку и перейти по адресу с помощью location.href.
-let link = window.location.href;
-document.getElementById(link).textContent = prompt(`перейти по адресу `); 
+
+document.getElementById("link").onclick = function(){
+    let links = prompt("введите адрес сайта");
+    if(links){
+        window.location.href = links;
+    }else{
+        alert("Ссылка не была введена.");
+    };
+};
 // ○ Старт и стоп таймера — кнопки должны запускать и останавливать секундомер на экране.
-
-
-
-
+let count = 0;
+let startCount;
+document.getElementById("start").onclick = function(){
+    startCount = setInterval(() => {
+        count++;
+        document.getElementById("counts").textContent = count;
+    }, 1000);
+};
+document.getElementById("stop").onclick = function(){
+    clearInterval(startCount);
+};
+document.getElementById("reset").onclick = function(){
+    clearInterval(startCount);
+    count = 0;
+    document.getElementById("counts").textContent = count;
+};
 </script>
 
 </body>
