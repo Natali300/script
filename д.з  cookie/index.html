@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Сохранение Email и коментариев</p><br><br>
+    <form action="javascript:void(0);">
+        <label for="emailInput">Електронная почта</label><br><br>
+    <input type="email" id="emailInput" placeholder="введите свою электронную почту" oninput="saveEmail()"><br><br>
+    <button onclick="saveEmail()">Сохранить email</button>
+    <button type="button" onclick="deleteName()">Забытое имя</button><br><br>
+</form>
+<form action="javascript:void(0);">
+    <label for="commentInput">Коментарий</label><br><br>
+    <textarea  id="commentInput" rows="4" cols="50" placeholder="введите коментарий"></textarea>
+</form>
+    <script src="script.js"></script>
+</body>
+</html>
