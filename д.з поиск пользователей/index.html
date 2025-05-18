@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>список студентов</title>
+</head>
+<body>
+   <h1>список студентов</h1>
+   <input type="text" id="student" placeholder="введите имя студента">
+   <input type="text" id = "adress.sity" placeholder="введите город">
+   <div id="counter">Найдено пользователей: 0</div>
+   <select id="sort">
+    <option value="asc">Сортировать по имени (А-Я)</option>
+    <option value="desc">Сортировать по имени (Я-А)</option>
+</select>
+   <div id="loading" style="display: none;">загрузка...</div>
+   <ul id="student-list"></ul> 
+   <style>
+    body {   font-family: Arial, sans-serif;
+           padding: 20px; }  
+    input {   padding: 10px;   width: 300px; }  
+    li {   margin-top: 10px;   padding: 10px;   
+        border-bottom: 1px solid #ccc; }  
+    button {   margin-left: 10px;   padding: 5px 10px; }  
+    .details {   margin-top: 5px;   font-size: 14px;   color: #555; } 
+   </style>
+   <script src="script.js"></script>
+</body>
+</html>
