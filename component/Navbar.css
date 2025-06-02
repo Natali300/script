@@ -1,0 +1,30 @@
+.navbar{
+    background-color: aquamarine;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    box-shadow: 0 2px 4px rgb(0, 0,0.1);
+    font-family: Arial, Helvetica, sans-serif;
+}
+.logo{
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+}
+.nav-links{
+    list-style: none;
+    display: flex;
+    gap: 24px;
+}
+.nav-links li a{
+    text-decoration: none;
+    color: blue;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.nav-links li:hover{
+    text-decoration: underline;
+}
