@@ -1,0 +1,40 @@
+.book-list{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.book{
+  border: 1px solid #d1d813;
+  padding: 16px;
+  margin: 12px;
+  border-radius: 8px;
+  background: #7db7b4;
+  box-shadow: 0 4px 6px rgba(0,0, 0, 0.1);
+  width: 240px;
+  text-align: center;
+}
+.book img{
+  max-width: 100%;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+.book h2{
+  font-size: 1.2em;
+  margin-bottom: 8px;
+}
+.book p{
+  font-size: 0.95em;
+  margin-bottom: 8px;
+}
+button{
+  background-color: #62e4e9;
+  color: rgb(24, 3, 58);
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+button:hover{
+ background-color: #04454d
+}
